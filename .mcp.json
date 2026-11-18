@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mindcase": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/mindcase-co/mindcase-mcp", "mindcase-mcp"],
+      "env": { "MINDCASE_API_KEY": "${MINDCASE_API_KEY}" }
+    }
+  }
+}
