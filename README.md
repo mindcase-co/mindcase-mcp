@@ -79,6 +79,16 @@ Runs that fail are not charged. Every run is sent with an `Idempotency-Key`, so 
 
 Full list with prices: [mindcase.co/api](https://mindcase.co/api).
 
+## Agent skill
+
+For agents that use skills instead of MCP (Claude Code, Codex, Cursor and others):
+
+```bash
+npx skills add mindcase-co/mindcase-mcp
+```
+
+It teaches the agent the REST workflow in [`skills/mindcase/SKILL.md`](skills/mindcase/SKILL.md).
+
 ## Not using MCP?
 
 It's a plain REST API. The full agent-readable reference is at [mindcase.co/skills.md](https://mindcase.co/skills.md), and the docs are at [docs.mindcase.co](https://docs.mindcase.co).
