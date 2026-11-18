@@ -1,0 +1,14 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: [MINDCASE_API_KEY]
+    properties:
+      MINDCASE_API_KEY:
+        type: string
+        description: Your Mindcase API key (mk_live_...) from https://console.mindcase.co
+  commandFunction: |-
+    (config) => ({
+      command: "mindcase-mcp",
+      env: { MINDCASE_API_KEY: config.MINDCASE_API_KEY }
+    })

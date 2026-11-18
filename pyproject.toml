@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mindcase-mcp"
+dynamic = ["version"]
+description = "MCP server for Mindcase: 249 web data APIs (LinkedIn, Instagram, TikTok, Google Maps, Amazon, reviews, jobs and more) for Claude, Cursor and any MCP client."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Mindcase", email = "team@mindcase.co" }]
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "cursor", "ai-agents", "web-scraping", "web-data", "linkedin-scraper", "google-maps-scraper", "instagram-scraper", "tiktok-scraper", "amazon-scraper", "lead-generation"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["mcp>=1.2.0,<2", "httpx>=0.27"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-asyncio>=0.23", "respx>=0.21"]
+
+[project.scripts]
+mindcase-mcp = "mindcase_mcp.server:main"
+
+[project.urls]
+Homepage = "https://mindcase.co"
+"API catalog" = "https://mindcase.co/api"
+Documentation = "https://docs.mindcase.co"
+"Hosted MCP server" = "https://mcp.mindcase.co"
+Repository = "https://github.com/mindcase-co/mindcase-mcp"
+
+[tool.hatch.version]
+path = "src/mindcase_mcp/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mindcase_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
